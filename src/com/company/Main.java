@@ -8,6 +8,7 @@ public class Main {
         System.out.println(limitMethod(3,9));
         positiveOrNegative(-5);
         System.out.println(integerMethod(2));
+        nameOutput("Фанзиль Кусяпкулов");
 
 
     }
@@ -79,5 +80,13 @@ public class Main {
             return false;
         }
 
+    }
+
+    //Написать метод, которому в качестве параметра передается строка, обозначающая имя.
+    //Метод должен вывести в консоль сообщение «Привет, указанное_имя!».
+
+    public static void nameOutput(String name){
+        System.out.println("\nЗадание #6");
+        System.out.println("Привет, " + name + "!");
     }
 }
