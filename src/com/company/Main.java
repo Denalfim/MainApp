@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         variables();
-        System.out.println("a * (b + (c / d)) = " + calculate(5,2,3,4));
+        System.out.println("a * (b + (c / d)) = " + calculate(2f,20f,30.5f,12.5f));
+        System.out.println(limitMethod(3,9));
 
 
     }
@@ -32,9 +33,21 @@ public class Main {
 
     //Написать метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат,
     //где a, b, c, d – аргументы этого метода, имеющие тип float.
-    public static int calculate (int a, int b, int c, int d){
+    public static float calculate (float a, float b, float c, float d){
         System.out.println("\nЗадание #2");
         return a * (b + ( c / d));
     }
+
+    //Написать метод, принимающий на вход два целых числа и проверяющий,
+    // что их сумма лежит в пределах от 10 до 20 (включительно), если да – вернуть true,
+    // в противном случае – false.
+
+    public static boolean limitMethod(int a, int b){
+        System.out.println("\nЗадание #3");
+        int sum = a + b;
+        if (sum > 10 && sum < 20) return true;
+        else return false;
+    }
+
 
 }
