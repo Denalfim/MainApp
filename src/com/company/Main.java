@@ -7,6 +7,7 @@ public class Main {
         System.out.println("a * (b + (c / d)) = " + calculate(2f,20f,30.5f,12.5f));
         System.out.println(limitMethod(3,9));
         positiveOrNegative(-5);
+        System.out.println(integerMethod(2));
 
 
     }
@@ -46,8 +47,11 @@ public class Main {
     public static boolean limitMethod(int a, int b){
         System.out.println("\nЗадание #3");
         int sum = a + b;
-        if (sum > 10 && sum < 20) return true;
-        else return false;
+        if (sum > 10 && sum < 20) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //Написать метод, которому в качестве параметра передается целое число,
@@ -56,7 +60,24 @@ public class Main {
     // Замечание: ноль считаем положительным числом.
     public static void positiveOrNegative(int a){
         System.out.println("\nЗадание #4");
-        if (a>=0) System.out.println("Число a = " + a + " (положительное)");
-        else System.out.println("Число a = " + a + " (отрицательное)");
+        if (a>=0) {
+            System.out.println("Число a = " + a + " (положительное)");
+        } else {
+            System.out.println("Число a = " + a + " (отрицательное)");
+        }
+    }
+
+    //Написать метод, которому в качестве параметра передается целое число.
+    // Метод должен вернуть true, если число отрицательное, и вернуть false
+    // если положительное. Замечание: ноль считаем положительным числом.
+
+    public static boolean integerMethod(int a){
+        System.out.println("\nЗадание #5");
+        if (a <=0) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
