@@ -4,12 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
         variables();
+        System.out.println("a * (b + (c / d)) = " + calculate(5,2,3,4));
 
 
     }
     // Создать переменные всех пройденных типов данных и инициализировать их значения.
-    static void variables(){
-        System.out.println("Задание #1\n");
+    public static void variables(){
+        System.out.println("\nЗадание #1");
         byte bt = 2;
         short st = 125;
         int in = 12345678;
@@ -28,4 +29,12 @@ public class Main {
         System.out.println("Значение типа boolean = " + bn);
 
     }
+
+    //Написать метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат,
+    //где a, b, c, d – аргументы этого метода, имеющие тип float.
+    public static int calculate (int a, int b, int c, int d){
+        System.out.println("\nЗадание #2");
+        return a * (b + ( c / d));
+    }
+
 }
