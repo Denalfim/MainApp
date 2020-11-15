@@ -6,6 +6,7 @@ public class Main {
         variables();
         System.out.println("a * (b + (c / d)) = " + calculate(2f,20f,30.5f,12.5f));
         System.out.println(limitMethod(3,9));
+        positiveOrNegative(-5);
 
 
     }
@@ -49,5 +50,13 @@ public class Main {
         else return false;
     }
 
-
+    //Написать метод, которому в качестве параметра передается целое число,
+    // метод должен напечатать в консоль, положительное ли число передали
+    // или отрицательное.
+    // Замечание: ноль считаем положительным числом.
+    public static void positiveOrNegative(int a){
+        System.out.println("\nЗадание #4");
+        if (a>=0) System.out.println("Число a = " + a + " (положительное)");
+        else System.out.println("Число a = " + a + " (отрицательное)");
+    }
 }
