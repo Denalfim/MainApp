@@ -30,7 +30,8 @@ public class Homework2 {
         System.out.println("Задание 1");
         int[] arr = new int[]{1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0};
         System.out.print("До: ");
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++)
+        {
             System.out.print(arr[i] + " ");
             if (arr[i] == 0) {
                 arr[i] = 1;
@@ -71,12 +72,15 @@ public class Homework2 {
 
         int[] multiply = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         System.out.print("До: ");
-        for (int i : multiply) {
+        for (int i : multiply)
+        {
             System.out.print(i + " ");
         }
         System.out.print("\nПосле: ");
-        for (int i = 0; i < multiply.length; i++) {
-            if (multiply[i] < 6) {
+        for (int i = 0; i < multiply.length; i++)
+        {
+            if (multiply[i] < 6)
+            {
                 multiply[i] *= 2;
                 System.out.print(multiply[i] + " ");
             }
@@ -105,7 +109,8 @@ public class Homework2 {
             }
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++)
+        {
             for (int j = 0; j < 5; j++)
             {
                 System.out.print(arr[i][j] + " ");
