@@ -33,7 +33,7 @@ public class Homework4 {
                 break;
             }
 
-            aiTurn();
+            aiTurn(DOT_O);
             printMap();
             if(checkWin(DOT_O)){
                 System.out.println("Комьютер победил");
@@ -81,14 +81,74 @@ public class Homework4 {
         map[y][x] = DOT_X;
     }
 
-    static void aiTurn() {
-        int x;
-        int y;
+    static void aiTurn(char c) {
+        int x = 0;
+        int y = 0;
+        int vertical = 0;
+        int verticalNull = 0;
+        int horizontal = 0;
+        int horizontalNull = 0;
+        int diagonalA = 0;
+        int diagonalB = 0;
+        int diaAnull = 0;
+        int diaBnull = 0;
         do {
             x = random.nextInt(SIZE);
             y = random.nextInt(SIZE);
         } while (!isCellValid(y, x));
         map[y][x] = DOT_O;
+
+        for (int i = 0; i < SIZE; i++) {
+            //Вертикаль
+            for (int j = 0; j < SIZE; j++) {
+                if (map[j][i] == DOT_X) vertical++;
+                else if (map[j][i] == DOT_EMPTY) verticalNull++;
+                if ((vertical == SIZE - 1) && (verticalNull == 1)) {
+                    for (int k = 0; k < SIZE; k++) {
+                        if (map[k][i] == DOT_EMPTY) {
+                            map[k][i] = c;
+                            return;
+                        }
+                    }
+                }
+                //Горизонталь
+                if (map[i][j] == DOT_X) horizontal++;
+                else if (map[i][j] == DOT_EMPTY) horizontalNull++;
+                if ((horizontal == SIZE - 1) && (horizontalNull == 1)) {
+                    for (int k = 0; k < SIZE; k++) {
+                        if (map[i][k] == DOT_EMPTY) {
+                            map[i][k] = c;
+                            return;
+                        }
+                    }
+                }
+            }
+            //Диагональ А
+            if(map[i][i] == DOT_X) diagonalA++;
+            else if(map[i][i] == DOT_EMPTY) diaAnull++;
+            if((diagonalA == SIZE - 1) && (diaAnull == 1)){
+                for (int j = 0; j < SIZE; j++) {
+                    if(map[j][j] == DOT_EMPTY){
+                        map[j][j] = c;
+                        return;
+                    }
+
+                }
+            }
+            if(map[i][SIZE - 1 - i] == DOT_X) diagonalB++;
+            else if(map[i][SIZE - 1 - i] == DOT_EMPTY) diaBnull++;
+            if((diagonalA == SIZE - 1) && (diaBnull == 1)){
+                for (int j = 0; j < SIZE; j++) {
+                    if(map[j][SIZE - 1 - j] == DOT_EMPTY){
+                        map[j][SIZE - 1 - j] = c;
+                        return;
+                    }
+
+                }
+            }
+        }
+
+
     }
 
 
@@ -111,38 +171,38 @@ public class Homework4 {
     }
 
     static boolean checkWin(char c) {
-        int Vertical;
-        int Horizontal;
-        int DiagonalA = 0;
-        int DiagonalB = 0;
+        int vertical;
+        int horizontal;
+        int diagonalA = 0;
+        int diagonalB = 0;
         for (int i = 0; i <= SIZE - 1; i++) {
-            Horizontal = 0;
-            Vertical = 0;
+            horizontal = 0;
+            vertical = 0;
             for (int j = 0; j <= SIZE- 1; j++) {
                 //Горизонталь
                 if (map[i][j] == c) {
-                    Horizontal++;
-                    if (Horizontal == SIZE) return true;
+                    horizontal++;
+                    if (horizontal == SIZE) return true;
                 }
 
                 //Вертикаль
                 if (map[j][i] == c) {
-                    Vertical++;
-                    if (Vertical == SIZE) return true;
+                    vertical++;
+                    if (vertical == SIZE) return true;
                 }
             }
 
             //  Диагональ А
             if (map[i][i] == c) {
-                DiagonalA++;
-                if (DiagonalA == SIZE) return true;
-            } else DiagonalA = 0;
+                diagonalA++;
+                if (diagonalA == SIZE) return true;
+            } else diagonalA = 0;
 
             // Диагональ В
             if (map[i][SIZE - 1 - i] == c) {
-                DiagonalB++;
-                if (DiagonalB == SIZE) return true;
-            } else DiagonalB = 0;
+                diagonalB++;
+                if (diagonalB == SIZE) return true;
+            } else diagonalB = 0;
         }
         return false;
 
