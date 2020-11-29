@@ -36,7 +36,7 @@ public class Staff {
         StaffList[] staffs = {
                 new StaffList("Сухоруков Иван Олегович", "Главный инженер", "suhor@ooolasurit.ru","89282365895" ,40000, 35),
                 new StaffList("Смирнов Илья Викторович", "Инженер", "smirnov@ooolasurit.ru","89282365892" ,30000, 42),
-                new StaffList("Орлов Денис Сергеевич", "Инженер-настройщик АТС", "orlov@ooolasurit.ru","89282365897" ,31000, 28),
+                new StaffList("Орлов Денис Сергеевич", "Инженер-настройщик АТС", "orlov@ooolasurit.ru","89282365897" ,31000, 45),
                 new StaffList("Крынкин Петр Радионович", "Водитель", "krinkin@ooolasurit.ru","89282365896" ,25000, 56),
                 new StaffList("Поляков Антон Викторович", "Системный администратор", "polyakov@ooolasurit.ru","89282365890" ,30000, 25),
         };
