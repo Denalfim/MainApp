@@ -20,7 +20,16 @@ public class Main {
             }
 
         }
-        getArraySumm(str);
+        //getArraySumm(str);
+
+        try {
+            getArraySumm(str);
+        } catch (MyArraySizeException e){
+            System.out.println("Ошибка размера массива. Массив должен быть 4х4");
+        } finally {
+            System.out.println("END");
+        }
+
     }
 
     private static void getArraySumm(String[][] str){
@@ -45,11 +54,15 @@ public class Main {
         System.out.println(sum);
     }
     private static void inputDate(String str, int x, int y){
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) < '0' || str.charAt(i) > '9'){
-                throw new MyArrayDataException(x,y);
-            }
 
+        try {
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) < '0' || str.charAt(i) > '9'){
+                    throw new MyArrayDataException(x,y);
+                }
+            }
+        } catch (MyArrayDataException e){
+            e.printStackTrace();
         }
     }
 }
