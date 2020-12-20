@@ -31,10 +31,11 @@ public class Main {
             if(str[i].length != 4){
                 throw new MyArraySizeException();
             }
+            break;
         }
         int sum = 0;
         for (int i = 0; i < str.length; i++) {
-            for (int j = 0; j < str[j].length; j++) {
+            for (int j = 0; j < str[i].length; j++) {
                 inputDate(str[i][j],i,j);
                 sum += Integer.parseInt(str[i][j]);
 
