@@ -1,0 +1,17 @@
+.root{
+    -fx-font-size: 16px;
+    -fx-background-image: url("/image/bgimg.jpg");
+}
+
+#go{
+    -fx-background-color: chocolate;
+}
+#go:hover{
+    -fx-background-color: darkgrey;
+}
+#clea{
+    -fx-background-color: antiquewhite;
+}
+#clea:hover{
+    -fx-background-color: darkgrey;
+}
