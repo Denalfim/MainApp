@@ -47,7 +47,7 @@ public class Homework5 {
         });
         Thread tr2  =   new Thread(() -> {
             for (int i = 0; i < H; i++) {
-                a2[i] = formula(a2[i], i);
+                a2[i] = formula(a2[i], i + H);
                 //System.out.println("Поток №2 " + a2[i]);
             }
         });
